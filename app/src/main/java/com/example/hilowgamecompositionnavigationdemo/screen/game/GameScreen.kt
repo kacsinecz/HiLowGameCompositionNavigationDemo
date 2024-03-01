@@ -28,7 +28,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.hilowgamecompositionnavigationdemo.R
 
 @Composable
-fun GameScreen(gameViewModel: GameViewModel = viewModel()) {
+fun GameScreen(
+    gameViewModel: GameViewModel = viewModel(),
+    onNavigateToMainMenu:() -> Unit
+) {
 
     val context = LocalContext.current
 
@@ -92,6 +95,10 @@ fun GameScreen(gameViewModel: GameViewModel = viewModel()) {
             gameViewModel.generateNewNum()
         }) {
             Text(text = stringResource(R.string.restart))
+        }
+
+        Button(onClick = onNavigateToMainMenu) {
+            Text(text = "Main menu")
         }
     }
 }

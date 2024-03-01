@@ -54,11 +54,15 @@ fun MyAppNavHost(
             arguments = listOf(navArgument("upperBound"){
                 defaultValue = 10
                 type = NavType.IntType})) {
-            GameScreen()
+            GameScreen(
+                onNavigateToMainMenu = {navController.navigate("mainmenuscreen")}
+            )
         }
 
         composable("aboutscreen") {
-            AboutScreen()
+            AboutScreen(
+                onNavigateToMainMenu = {navController.navigate("mainmenuscreen")}
+            )
         }
 
         composable("helpscreen/{helptext}",
@@ -68,7 +72,10 @@ fun MyAppNavHost(
             navBackStackEntry -> val text = navBackStackEntry.arguments?.getString("helptext")
 
             text?.let {
-                HelpScreen(text)
+                HelpScreen(
+                    text,
+                    onNavigateToMainMenu = {navController.navigate("mainmenuscreen")}
+                )
             }
         }
     }
