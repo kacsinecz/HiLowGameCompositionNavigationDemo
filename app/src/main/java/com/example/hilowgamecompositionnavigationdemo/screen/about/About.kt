@@ -14,7 +14,7 @@ fun AboutScreen(
     Column {
         Text(text = "$aboutText, userId: $userId")
         Button(onClick = onNavigateToMainMenu) {
-            Text(text = "Return to main menu")
+            Text(text = "Return to main menu 2")
         }
     }
 }

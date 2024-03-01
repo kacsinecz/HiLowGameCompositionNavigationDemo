@@ -13,7 +13,7 @@ fun HelpScreen(
     Column {
         Text(text = helpText)
         Button(onClick = onNavigateToMainMenu) {
-            Text(text = "Return to main menu")
+            Text(text = "Return to main menu 2")
         }
     }
 
